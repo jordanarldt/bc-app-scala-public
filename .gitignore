@@ -1,0 +1,15 @@
+*.class
+.idea
+target/
+.scalafmt.conf
+
+.bloop
+.bsp
+.metals
+.vscode
+project/.bloop/
+project/project/
+project/metals.sbt
+.DS_STORE
+
+react/node_modules/
