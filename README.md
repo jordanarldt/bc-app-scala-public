@@ -2,7 +2,7 @@
 This is a sample project setup that demonstrates creating a BigCommerce app using Scala with Akka HTTP for the back-end and React for the front-end. This app is set up to use Heroku as the hosting service, but can be modified to use any host that fits your needs.
 
 ## Prerequisites
-- Have **Scala**, **Java 17+**, and **NodeJS** installed (see the [Scala Getting Started Guide](https://docs.scala-lang.org/getting-started/index.html))
+- Have **Scala**, **Java 11**, and **NodeJS** installed (see the [Scala Getting Started Guide](https://docs.scala-lang.org/getting-started/index.html))
 - Create your own fork of this repository
 - Clone your fork to your local machine
 
