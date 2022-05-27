@@ -1,6 +1,6 @@
+import { H1 } from "@bigcommerce/big-design";
 import React from "react";
 import { AppRoute } from "../types";
-import { H1 } from "@bigcommerce/big-design";
 import { NavMenu } from "./NavMenu";
 
 interface HeaderProps {

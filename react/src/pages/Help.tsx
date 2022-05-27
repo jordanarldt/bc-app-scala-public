@@ -1,5 +1,5 @@
-import React from "react";
 import { Collapse, Panel, Text } from "@bigcommerce/big-design";
+import React from "react";
 
 export const Help = () => {
   return (
@@ -25,7 +25,7 @@ export const Help = () => {
         </div>
         <div>
           <Collapse title="Why am I getting an error?">
-            <Text>If you're getting an error, you're likely doing something incorrectly. Here are the steps on how to do it correctly:</Text>
+            <Text>If you&apos;re getting an error, you&apos;re likely doing something incorrectly. Here are the steps on how to do it correctly:</Text>
             <ol>
               <li><Text as="span">Do this thing</Text></li>
               <li><Text as="span">And then this thing</Text></li>

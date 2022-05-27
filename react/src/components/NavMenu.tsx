@@ -1,7 +1,7 @@
 import React from "react";
-import { AppRoute } from "../types";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { AppRoute } from "../types";
 
 interface NavMenuProps {
   routes: AppRoute[];

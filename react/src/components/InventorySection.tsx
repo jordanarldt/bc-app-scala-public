@@ -1,18 +1,18 @@
-import { useState, useEffect } from "react";
 import { 
-  Text, 
-  ProgressCircle,
-  Box,
-  Table, 
-  Flex, 
-  FlexItem,
+  Box, 
   Button,
+  Flex,
+  FlexItem, 
+  ProgressCircle, 
+  Table,
+  Text,
 } from "@bigcommerce/big-design";
-import { SearchBar } from "./SearchBar";
+import { useEffect, useState } from "react";
+import { InlineError } from "../components/InlineError";
+import { spawnVariantEditModal } from "../components/VariantEditModal";
 import { useSession } from "../context/SessionProvider";
 import { usePermissions, useVariants } from "../lib/hooks";
-import { spawnVariantEditModal } from "../components/VariantEditModal";
-import { InlineError } from "../components/InlineError";
+import { SearchBar } from "./SearchBar";
 
 export const InventorySection = () => {
   const context = useSession();
@@ -170,5 +170,6 @@ interface PreFetchPageProps {
 
 function PreFetchPage({ targetPage, limit }: PreFetchPageProps) {
   useVariants(targetPage, limit);
+  
   return null;
-};
+}

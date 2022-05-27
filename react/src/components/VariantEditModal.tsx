@@ -1,15 +1,15 @@
-import { useState } from "react";
-import ReactDOM from "react-dom";
 import { 
-  Modal,
-  Form,
-  FormGroup,
   Counter,
-  Select,
   Flex,
   FlexItem,
+  Form,
+  FormGroup,
+  Modal,
   ProgressCircle,
+  Select,
 } from "@bigcommerce/big-design";
+import { useState } from "react";
+import ReactDOM from "react-dom";
 import { updateInventoryOrTrackingType } from "../lib/api";
 import { InlineError } from "./InlineError";
 

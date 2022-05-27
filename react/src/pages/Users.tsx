@@ -1,8 +1,8 @@
-import React from "react";
 import { 
   Panel, 
   Text, 
 } from "@bigcommerce/big-design";
+import React from "react";
 import { UsersSection } from "../components/UsersSection";
 
 export const Users = () => {

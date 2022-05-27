@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { Select } from "@bigcommerce/big-design";
+import { useState } from "react";
 import { updateUserRole } from "../lib/api";
 
 interface UsersRoleCellProps {
@@ -7,7 +7,7 @@ interface UsersRoleCellProps {
   role: string;
   currentUserRole: string;
   context: string;
-};
+}
 
 export const UsersRoleCell = ({ userId, role, currentUserRole, context }: UsersRoleCellProps) => {
   const [currentRole, setCurrentRole] = useState(role);

@@ -1,14 +1,14 @@
-import { useState } from "react";
 import { 
-  Table, 
-  ProgressCircle, 
   Flex, 
   FlexItem, 
+  ProgressCircle, 
+  Table, 
 } from "@bigcommerce/big-design";
-import { SearchBar } from "../components/SearchBar";
-import { usePermissions, useStoreUsers } from "../lib/hooks";
-import { useSession } from "../context/SessionProvider";
+import { useState } from "react";
 import { InlineError } from "../components/InlineError";
+import { SearchBar } from "../components/SearchBar";
+import { useSession } from "../context/SessionProvider";
+import { usePermissions, useStoreUsers } from "../lib/hooks";
 import { UsersRoleCell } from "./UsersRoleCell";
 
 export const UsersSection = () => {
@@ -110,5 +110,6 @@ interface PreFetchPageProps {
 
 function PreFetchPage({ targetPage, limit }: PreFetchPageProps) {
   useStoreUsers(targetPage, limit);
+
   return null;
-};
+}

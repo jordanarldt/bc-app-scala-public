@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import { useSession } from "../context/SessionProvider";
-import { ApiError, PaginationInfo, PermissionsResponse, StoreUser, Variant, BcMeta } from "../types";
+import { ApiError, BcMeta, PaginationInfo, PermissionsResponse, StoreUser, Variant } from "../types";
 
 const apiHost = process.env.NODE_ENV === "development" ? "http://localhost:8080" : "";
 
@@ -32,7 +32,7 @@ export function usePermissions() {
 }
 
 // Hook to fetch the current store users from the API
-export function useStoreUsers(page: number, limit: number, search: string = "") {
+export function useStoreUsers(page: number, limit: number, search = "") {
   // consider adding a name filter in the api?
   const context = useSession();
   const params = new URLSearchParams({ context, page: String(page), limit: String(limit), search }).toString();
@@ -47,7 +47,7 @@ export function useStoreUsers(page: number, limit: number, search: string = "") 
   };
 }
 
-export function useVariants(page: number, limit: number, like: string = "") {
+export function useVariants(page: number, limit: number, like = "") {
   const context = useSession();
   const params = new URLSearchParams({ context, page: String(page), limit: String(limit), like }).toString();
 

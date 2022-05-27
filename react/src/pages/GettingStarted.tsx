@@ -1,5 +1,5 @@
-import React from "react";
 import { Panel, Text } from "@bigcommerce/big-design";
+import React from "react";
 
 export const GettingStarted = () => {
   return (

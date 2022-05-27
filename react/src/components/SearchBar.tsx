@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import { Box, Search } from "@bigcommerce/big-design";
+import { useEffect, useState } from "react";
 
 interface SearchBarProps {
   defaultValue: string;

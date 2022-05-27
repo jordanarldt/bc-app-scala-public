@@ -2,7 +2,7 @@ import { ApiError } from "../types";
 
 const apiHost = process.env.NODE_ENV === "development" ? "http://localhost:8080" : "";
 
-const fetcher = async (path: string, method: string, body?: object) => {
+const fetcher = async (path: string, method: string, body?: Record<string, unknown>) => {
   const res = await fetch(`${apiHost}${path}`, {
     method: method,
     headers: {
@@ -19,7 +19,7 @@ const fetcher = async (path: string, method: string, body?: object) => {
     throw error;
   }
 
-  return res.json().catch(() => {});
+  return res.json().catch(() => null);
 };
 
 export function updateUserRole(userId: number, role: string, context: string): Promise<void> {
@@ -34,5 +34,6 @@ export function updateInventoryOrTrackingType(
   context: string
 ) {
   const body = { variantId, productId, trackingType, inventoryCount };
+
   return fetcher(`/api/variants?context=${context}`, "PUT", body);
 }

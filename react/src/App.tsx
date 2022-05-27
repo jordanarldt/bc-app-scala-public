@@ -1,16 +1,16 @@
+import { AssignmentIcon, BaselineHelpIcon } from "@bigcommerce/big-design-icons";
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { AssignmentIcon, BaselineHelpIcon } from "@bigcommerce/big-design-icons";
-import { SessionProvider } from "./context/SessionProvider";
+import { Header } from "./components/Header";
 import { InventoryIcon } from "./components/icons/InventoryIcon";
 import { UsersIcon } from "./components/icons/UsersIcon";
-import { Header } from "./components/Header";
+import { SessionProvider } from "./context/SessionProvider";
 import { GettingStarted } from "./pages/GettingStarted";
 import { Help } from "./pages/Help";
 import { Inventory } from "./pages/Inventory";
+import { NotFound } from "./pages/NotFound";
 import { Users } from "./pages/Users";
 import { AppRoute } from "./types";
-import { NotFound } from "./pages/NotFound";
 
 const appRoutes: AppRoute[] = [
   { 
