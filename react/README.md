@@ -12,5 +12,13 @@ The page will reload if you make edits.
 
 Builds the app for production to the `/src/main/resources/client` folder to be served from the Scala server.
 
+### `npm run test`
+
+Runs the tests found in the `/src/test` directory
+
+### `npm run lint`
+
+Runs ESLint
+
 ### `npm run ngrok`
 Optional command to make it easier to start an ngrok tunnel on localhost.
