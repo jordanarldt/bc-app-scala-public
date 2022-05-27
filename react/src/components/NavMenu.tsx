@@ -35,14 +35,14 @@ const Container = styled.ul`
 
 const Item = styled.li`
   display: inline-block;
-  margin: 0 0.5em;
+  margin: 0 0.5rem;
 `;
 
 const MenuLink = styled(NavLink)`
   display: block;
   font-weight: bold;
-  padding: 0.5em 1em;
-  border-radius: 0.75em;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
   text-decoration: none;
   transition: 100ms;
   background-color: ${({ theme }) => theme.colors.primary20};
@@ -59,6 +59,6 @@ const MenuLink = styled(NavLink)`
   }
 
   & svg {
-    margin-right: 0.25em;
+    margin-right: 0.25rem;
   }
 `;

@@ -11,12 +11,12 @@ const AppGlobalStyles = createGlobalStyle`
     height: 100%;
     max-width: 1080px;
     min-width: 600px;
-    margin: 2em auto;
+    margin: 2rem auto;
     background-color: ${({ theme }) => theme.colors.secondary10};
   }
 
   #root {
-    padding: 1em;
+    padding: 1rem;
   }
 
   a {
