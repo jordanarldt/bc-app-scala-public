@@ -10,8 +10,8 @@ const AppGlobalStyles = createGlobalStyle`
   body {
     height: 100%;
     max-width: 1080px;
-    min-width: 800px;
-    margin: 2rem auto;
+    min-width: 600px;
+    margin: 2em auto;
     background-color: ${({ theme }) => theme.colors.secondary10};
   }
 

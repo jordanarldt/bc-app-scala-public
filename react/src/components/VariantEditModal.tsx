@@ -9,9 +9,9 @@ import {
   Flex,
   FlexItem,
   ProgressCircle,
-  InlineMessage
 } from "@bigcommerce/big-design";
 import { updateInventoryOrTrackingType } from "../lib/api";
+import { InlineError } from "./InlineError";
 
 interface VariantEditModalProps {
   id: number;
@@ -39,22 +39,21 @@ const VariantEditModal = ({
   const [isSaving, setIsSaving] = useState(false);
   const [saveError, setSaveError] = useState(false);
 
-  const handleSave = () => {
+  const handleSave = async () => {
     // Make sure the values have been changed, otherwise close the modal without making a request
     if (trackingValue !== trackingType || inventoryValue !== inventoryCount) {
       setIsSaving(true);
       const newTracking = trackingValue !== trackingType ? trackingValue : null;
 
-      updateInventoryOrTrackingType(id, productId, newTracking, inventoryValue, context)
-      .then(() => {
+      try {
+        await updateInventoryOrTrackingType(id, productId, newTracking, inventoryValue, context);
         setIsSaving(false);
         onSuccess();
         closeModal();
-      })
-      .catch(err => {
+      } catch {
         setIsSaving(false);
         setSaveError(true);
-      });
+      }
     } else {
       closeModal();
     }
@@ -102,13 +101,7 @@ const VariantEditModal = ({
             />
           </FormGroup>
           {saveError && (
-            <InlineMessage 
-              type="error"
-              header="Error" 
-              messages={[
-                { text: "Failed to update the variant. Please try again." }
-              ]}
-            />
+            <InlineError message="Failed to update the variant. Please try again." />
           )}
         </Form>
       )}

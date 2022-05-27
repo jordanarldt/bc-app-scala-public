@@ -1,10 +1,14 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { bcSDK } from "../scripts/bigcommerce";
 
 const UserContext = createContext("");
 
-export const SessionProvider = ({ children }: any) => {
+interface SessionProviderProps {
+  children?: React.ReactNode;
+}
+
+export const SessionProvider = ({ children }: SessionProviderProps) => {
   const [searchParams] = useSearchParams();
   const [context, setContext] = useState("");
 

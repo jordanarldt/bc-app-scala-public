@@ -5,7 +5,7 @@ import com.example.UserRoles.UserRole
 
 import scala.concurrent.{Future, ExecutionContext}
 
-import slick.jdbc.JdbcBackend.{Database => JdbcDatabase, DatabaseDef}
+import slick.jdbc.JdbcBackend.{Database => JdbcDatabase}
 import slick.jdbc.PostgresProfile.api._
 
 object Database {

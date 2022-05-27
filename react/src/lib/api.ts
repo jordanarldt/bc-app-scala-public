@@ -2,7 +2,7 @@ import { ApiError } from "../types";
 
 const apiHost = process.env.NODE_ENV === "development" ? "http://localhost:8080" : "";
 
-const fetcher = async (path: string, method: string, body?: any) => {
+const fetcher = async (path: string, method: string, body?: object) => {
   const res = await fetch(`${apiHost}${path}`, {
     method: method,
     headers: {

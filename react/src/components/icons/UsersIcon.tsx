@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 const StyledIcon = styled.svg`
   vertical-align: middle;
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1.5em;
+  width: 1.5em;
 `;
 
 export const UsersIcon = () => (
