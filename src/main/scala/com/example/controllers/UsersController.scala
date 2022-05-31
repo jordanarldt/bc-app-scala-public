@@ -22,7 +22,7 @@ object UsersController {
 
 class UsersController(payload: BcVerifiedUser, method: String, db: Database) {
   
-  val storeHash = payload.context.split("/").last
+  private val storeHash = payload.context.split("/").last
 
   val routes: Route = method match {
     case "GET" =>

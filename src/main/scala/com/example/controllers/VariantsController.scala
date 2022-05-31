@@ -16,7 +16,6 @@ import akka.http.scaladsl.server.Directives._
 import java.net.URLEncoder
 
 import spray.json._
-import spray.json.DefaultJsonProtocol._
 
 // Controller for requests to the /api/variants endpoint
 // Creating a controller helps keep the code organized and isolate logic into components.
@@ -36,7 +35,7 @@ class VariantsController(
   db: Database,
   ec: ExecutionContext
 ) {
-  implicit val executionContext = ec
+  private implicit val executionContext: ExecutionContext = ec
 
   val routes: Route = method match {
     case "GET" =>
@@ -104,7 +103,7 @@ class VariantsController(
       }
       .flatMap { case (variants, productRequests) =>
         productRequests.map { responses =>
-          val productData = responses.map(_.parseJson.convertTo[BcProductsResponse].data).flatten
+          val productData = responses.flatMap(_.parseJson.convertTo[BcProductsResponse].data)
 
           // Keep the response format the same, but inject the productData values into the response
           // for each variant.
@@ -134,12 +133,12 @@ class VariantsController(
   // Update a variant and/or the parent product tracking type
   private def updateVariantOrTracking(body: UpdateVariantBody): Future[Boolean] = {
     // construct the json manually since it's a simple request
-    val variantBody = s"""[{"inventory_level": ${body.inventoryCount}, "id": ${body.variantId}}]""";
+    val variantBody = s"""[{"inventory_level": ${body.inventoryCount}, "id": ${body.variantId}}]"""
 
     val variantRequest = bcClient.put(s"v3/catalog/variants", variantBody)
     val productRequest = body.trackingType match {
       case Some(trackingType) => 
-        val productBody = s"""{"inventory_tracking": "${trackingType}"}"""
+        val productBody = s"""{"inventory_tracking": "$trackingType"}"""
         bcClient.put(s"v3/catalog/products/${body.productId}", productBody)
       case None => Future.successful("noop")
     }
